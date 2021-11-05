@@ -22,9 +22,9 @@ const App = () => {
       console.error(err);
     })
   }, [])
-  console.log(characterData);
-  console.log(characterData[0]);
-  console.log(characterData[0].name);
+  // console.log(characterData);
+  // console.log(characterData[0]);
+  // console.log(characterData[0].name);
 
   return (
     <div className="App">
