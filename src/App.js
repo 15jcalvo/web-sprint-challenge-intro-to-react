@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './App.css';
 import axios from 'axios';
 import Character from './components/Character'
+import StyledCharacter from './components/Style'
 
 const App = () => {
   // Try to think through what state you'll need for this app before starting. Then build out
@@ -22,15 +23,14 @@ const App = () => {
       console.error(err);
     })
   }, [])
-  // console.log(characterData);
-  // console.log(characterData[0]);
-  // console.log(characterData[0].name);
 
   return (
     <div className="App">
       <h1 className="Header">Characters</h1>
       {characterData.map(char => (
+        <StyledCharacter>
         <Character char = {char}/>
+        </StyledCharacter>
       ))}
     </div>
   );
