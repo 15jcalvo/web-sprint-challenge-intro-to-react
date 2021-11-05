@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './App.css';
 import axios from 'axios';
 import Character from './components/Character'
-import StyledCharacter from './components/Style'
+import StyledCharacters from './components/StyledCharacters'
 
 const App = () => {
   // Try to think through what state you'll need for this app before starting. Then build out
@@ -15,7 +15,6 @@ const App = () => {
   useEffect(() => {
     axios.get('https://swapi.dev/api/people')
     .then(res => {
-      // console.log(res);
       setCharacterData(res.data);
     })
       
@@ -28,9 +27,9 @@ const App = () => {
     <div className="App">
       <h1 className="Header">Characters</h1>
       {characterData.map(char => (
-        <StyledCharacter>
-        <Character char = {char}/>
-        </StyledCharacter>
+        <StyledCharacters>
+        <Character char = {char} />
+        </StyledCharacters>
       ))}
     </div>
   );
